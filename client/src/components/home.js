@@ -4,25 +4,27 @@ import SignIn from './signIn';
 import SignUp from './signUp';
 import Header from './header';
 import PizzaCard from './pizzaCard'
+import AddPizzaForm from './addPizza';
 
 const BASE_URL = 'http://localhost:5000/'
 
 function Home() {
   const [pizzas, setPizzas] = useState([]);
 
-  useEffect(() => {
-    fetch(`${BASE_URL}/get_pizzas`)
-      .then((response) => response.json())
-      .then((data) => {
-        setPizzas(data);
-        console.log(data);
-      });
-  }, []);
+  // useEffect(() => {
+  //   fetch(`${BASE_URL}/get_pizzas`)
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       setPizzas(data);
+  //       console.log(data);
+  //     });
+  // }, []);
 
   return (
     <Fragment>
         <Header />
         <h2>Restaurant-Listings</h2>
+        <AddPizzaForm />
         <div style={{ display: 'flex', justifyContent: 'center'}}>
             <div className="products__wrapper">
             {pizzas.map((pizza, index) => (
@@ -30,8 +32,8 @@ function Home() {
                 ))}
             </div>
         </div>
-        <SignIn/>
-        <SignUp/>
+        {/* <SignIn/>
+        <SignUp/> */}
     </Fragment>
   );
 }

@@ -1,26 +1,26 @@
 
 
 import React, { useState } from 'react';
-import { useAuth } from '../context/AuthContext';
+//import { useAuth } from '../context/AuthContext';
 import './signIn_signUp.css';
 
 const BASE_URL ='http://localhost:5000/'
 
 const SignUp = () => {
-  const { wekaUser } = useAuth();
-  const [restaurantName, setRestaurantName] = useState('');
-  const [restaurantImage, setRestaurantImage] = useState('');
+ // const { wekaUser } = useAuth();
+  const [restaurant_name, setRestaurantName] = useState('');
+  //const [restaurantImage, setRestaurantImage] = useState('');
   const [email, setEmail] = useState('');
-  const [number,setNumber] = useState('')
+  const [phone_number,setNumber] = useState('')
   const [password, setPassword] = useState('');
 
   function handleSubmit(e) {
     e.preventDefault();
     const signData = {
-      restaurant_name: restaurantName,
-      restaurant_image: restaurantImage,
+      restaurant_name: restaurant_name,
+      //restaurant_image: restaurantImage,
       email: email,
-      number: number,
+      phone_number: phone_number,
       password: password,
     };
     fetch(`${BASE_URL}/register`, {
@@ -39,7 +39,7 @@ const SignUp = () => {
         return res.json();
       })
       .then((data) => {
-        wekaUser(data);
+       // wekaUser(data);
       })
       .catch((error) => console.log(error));
   }
@@ -55,11 +55,11 @@ const SignUp = () => {
               type="text"
               className="form-control"
               placeholder="Restaurant name"
-              value={restaurantName}
+              value={restaurant_name}
               onChange={(e) => setRestaurantName(e.target.value)}
             />
           </div>
-          <div className="mb-3">
+          {/* <div className="mb-3">
             <label>Restaurant Image</label>
             <input
               type="text"
@@ -68,7 +68,7 @@ const SignUp = () => {
               value={restaurantImage}
               onChange={(e) => setRestaurantImage(e.target.value)}
             />
-          </div>
+          </div> */}
           <div className="mb-3">
             <label>Email address</label>
             <input
@@ -85,7 +85,7 @@ const SignUp = () => {
               type="number"
               className="form-control"
               placeholder="Phone number"
-              value={number}
+              value={phone_number}
               onChange={(e) => setNumber(e.target.value)}
             />
           </div>

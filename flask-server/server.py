@@ -41,7 +41,7 @@ class RestaurantPizza(db.Model):
 
 
 # Registration
-@app.route('/register', methods=['POST'])
+@app.route('/register', methods=['POST', 'GET'])
 def register():
     data = request.json
     restaurant = Restaurant(
@@ -65,12 +65,12 @@ def login():
     return jsonify({'message': 'Invalid credentials'}), 401
 
 # Add a new pizza
-@app.route('/add_pizza', methods=['POST'])
+@app.route('/add_pizza', methods=['POST', 'GET'])
 @jwt_required()
 def add_pizza():
     data = request.get_json()
-    new_pizza = Pizza(name=data['name'], price=data['price'], ingredients=data['ingredients'], restaurant_id=get_jwt_identity())
-    db.session.add(new_pizza)
+    pizza = Pizza(name=data['name'], price=data['price'], ingredients=data['ingredients'],)
+    db.session.add(pizza)
     db.session.commit()
     return jsonify({"message": "Pizza added successfully"}), 201
 

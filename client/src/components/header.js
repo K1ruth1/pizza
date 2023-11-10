@@ -1,6 +1,3 @@
-
-
-
 // eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect, useContext } from 'react';
 import { 
@@ -10,13 +7,14 @@ import {
   Navbar,
 } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { FiUser } from 'react-icons/fi';
 
+
 const Header = () => {
-  const navigate = useNavigate();
-  const { useState } = useAuth();
+  // const navigate = useNavigate();
+  //const { useState } = useAuth();
   const [restaurant_name, setRestaurant_name] = useState('');
 
   useEffect(() => {
@@ -30,7 +28,7 @@ const Header = () => {
   const handleSignOut = () => {
     localStorage.removeItem('restaurant_name');
     setRestaurant_name('');
-    navigate('/signin'); 
+    // navigate('/signin'); 
   };
 
   return (

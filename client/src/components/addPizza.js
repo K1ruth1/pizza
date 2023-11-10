@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+const BASE_URL ='http://localhost:5000/'
 
 const AddPizzaForm = () => {
   const [name, setName] = useState('');
@@ -11,7 +12,7 @@ const AddPizzaForm = () => {
     const pizza = { name, price, ingredients };
 
     try {
-      const response = await fetch('sqlite:///pizza_restaurants.db/add_Pizza', {
+      const response = await fetch(`${BASE_URL}/add_pizza`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
