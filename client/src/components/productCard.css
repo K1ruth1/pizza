@@ -1,0 +1,35 @@
+.products__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1024px;
+    width: 80%;
+    margin: 70px auto 0;
+    gap: 12px;
+  }
+  
+  .productCard__wrapper {
+    width: 30%;
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 12px;
+    margin: auto;
+    word-wrap: break-word;
+  }
+  
+
+  .ProductCard__price {
+    margin: 20px 0;
+  }
+
+  
+  @media screen and (max-width: 1147px) {
+    .productCard__wrapper {
+      width: 45%;
+    }
+  }
+  
+  @media screen and (max-width: 700px) {
+    .productCard__wrapper {
+      width: 90%;
+    }
+  }

@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "git": "^0.1.5",
+    "react-hook-form": "^7.48.2"
+  }
+}
