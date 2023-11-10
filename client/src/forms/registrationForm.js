@@ -21,14 +21,14 @@ const SignupForm = ({ onSubmit }) => {
         />
         {errors.restaurantName && <p>{errors.restaurantName.message}</p>}
       </div>
-      <div>
+      {/* <div>
         <input
           type="file"
           placeholder="Restaurant Image"
           {...register('restaurantImage', { required: 'Restaurant Image is required' })}
         />
         {errors.restaurantImage && <p>{errors.restaurantImage.message}</p>}
-      </div>
+      </div> */}
       <div>
         <input
           type="email"
