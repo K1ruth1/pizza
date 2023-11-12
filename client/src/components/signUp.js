@@ -2,28 +2,28 @@
 
 import React, { useState } from 'react';
 //import { useAuth } from '../context/AuthContext';
-import './signIn_signUp.css';
 
-const BASE_URL ='http://localhost:5000/'
+
+const BASE_URL ='http://localhost:80'
 
 const SignUp = () => {
  // const { wekaUser } = useAuth();
   const [restaurant_name, setRestaurantName] = useState('');
-  //const [restaurantImage, setRestaurantImage] = useState('');
+  // const [restaurantImage, setRestaurantImage] = useState('');
   const [email, setEmail] = useState('');
-  const [phone_number,setNumber] = useState('')
+  // const [phone_number,setNumber] = useState('')
   const [password, setPassword] = useState('');
 
   function handleSubmit(e) {
     e.preventDefault();
     const signData = {
       restaurant_name: restaurant_name,
-      //restaurant_image: restaurantImage,
+      // restaurant_image: restaurantImage,
       email: email,
-      phone_number: phone_number,
+      // phone_number: phone_number,
       password: password,
     };
-    fetch(`${BASE_URL}/register`, {
+    fetch(`${BASE_URL}/signup`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -62,7 +62,7 @@ const SignUp = () => {
           {/* <div className="mb-3">
             <label>Restaurant Image</label>
             <input
-              type="text"
+              type="image"
               className="form-control"
               placeholder="Restaurant image"
               value={restaurantImage}
@@ -79,7 +79,7 @@ const SignUp = () => {
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
-          <div className="mb-3">
+          {/* <div className="mb-3">
             <label>Phone number</label>
             <input
               type="number"
@@ -88,7 +88,7 @@ const SignUp = () => {
               value={phone_number}
               onChange={(e) => setNumber(e.target.value)}
             />
-          </div>
+          </div> */}
           <div className="mb-3">
             <label>Password</label>
             <input
@@ -105,7 +105,7 @@ const SignUp = () => {
             </button>
           </div>
           <p className="forgot-password text-right">
-            Already registered <a href="/sign-in">sign in?</a>
+            Already registered <a href="/signIn">sign in?</a>
           </p>
         </form>
       </div>

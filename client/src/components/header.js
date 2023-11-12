@@ -1,20 +1,18 @@
-// eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect, useContext } from 'react';
-import { 
-  Container,
-  Nav,
-  NavDropdown,
-  Navbar,
-} from 'react-bootstrap';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from 'react-router-dom';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { FiUser } from 'react-icons/fi';
+// import { FiUser } from 'react-icons/fi';
+import AddPizzaForm from './addPizza';
 
 
 const Header = () => {
-  // const navigate = useNavigate();
-  //const { useState } = useAuth();
+  const navigate = useNavigate();
+//   const { useState } = useAuth();
   const [restaurant_name, setRestaurant_name] = useState('');
 
   useEffect(() => {
@@ -28,48 +26,75 @@ const Header = () => {
   const handleSignOut = () => {
     localStorage.removeItem('restaurant_name');
     setRestaurant_name('');
-    // navigate('/signin'); 
+    navigate('/'); 
   };
 
   return (
-    <Navbar bg="dark" variant="dark">
-      <Container>
-        <NavDropdown
-          title={
-            <div style={{ display: 'inline-block', color: 'silver' }}>
-              <FiUser size="1.2em" />{' '}
-              <span> Hi, {restaurant_name === '' ? 'User' : restaurant_name}</span>
-            </div>
-          }
-          id="basic-nav-dropdown"
-        >
-          <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-          <NavDropdown.Item onClick={handleSignOut}>Sign Out</NavDropdown.Item>
-        </NavDropdown>
-        <Navbar.Brand>
-          <Link to="/">Restaurant-Listings</Link>
-        </Navbar.Brand>
-        <Nav>
-          <Link to="/addPizza">
-            <button type="button" className="btn btn-light">
-              Add Pizza
-            </button>
-          </Link>
-          <Link to="/signin">
-            <button type="button" className="btn btn-light">
-              Sign In
-            </button>
-          </Link>
-          <Link to="/signup">
-            <button type="button" className="btn btn-light">
-              Sign Up
-            </button>
-          </Link>
+    <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
+    <Container>
+      <Navbar.Brand href="/home">Pizzaverse</Navbar.Brand>
+      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+      <Navbar.Collapse id="responsive-navbar-nav">
+        <Nav className="me-auto">
+          <Nav.Link href="/signIn">Login</Nav.Link>
+          <Nav.Link href="/signUp">Sign up</Nav.Link>
+          <NavDropdown title="Options" id="collapsible-nav-dropdown">
+            <NavDropdown.Item href="/addpizza" >Add Pizza</NavDropdown.Item>
+            {/* <NavDropdown.Item href="#action/3.2">
+              Another action
+            </NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item> */}
+            <NavDropdown.Divider />
+            <NavDropdown.Item href="/logOut">
+              Log out
+            </NavDropdown.Item>
+          </NavDropdown>
         </Nav>
-      </Container>
-    </Navbar>
+        <Nav>
+          <Nav.Link eventKey={2} href="#memes">
+            Pizzaria
+          </Nav.Link>
+        </Nav>
+      </Navbar.Collapse>
+    </Container>
+  </Navbar>
+    // <Navbar bg="dark" variant="dark">
+    //     <NavDropdown
+    //       title={
+    //         <div style={{ display: 'inline-block', color: 'silver' }}>
+    //           <FiUser size="1.2em" />{' '}
+    //           <span> Hi, {restaurant_name === '' ? 'User' : restaurant_name}</span>
+    //         </div>
+    //       }
+    //       id="basic-nav-dropdown"
+    //     >
+    //       <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
+    //       <NavDropdown.Item onClick={handleSignOut}>Sign Out</NavDropdown.Item>
+    //     </NavDropdown>
+    //     <Navbar.Brand>
+    //       <Link to="/">Restaurant-Listings</Link>
+    //     </Navbar.Brand>
+    //     <Nav>
+    //       {/* <Link to="/addPizza">
+    //         <button type="button" className="btn btn-light">
+    //           Add Pizza
+    //         </button>
+    //       </Link> */}
+    //       <Link to="/signin">
+
+    //         <button type="button" className="btn btn-light">
+    //           Sign In
+    //         </button>
+    //       </Link>
+    //       <Link to="/signup">
+    //         <button type="button" className="btn btn-light">
+    //           Sign Up
+    //         </button>
+    //       </Link>
+    //     </Nav>
+    
+    // </Navbar>
   );
 };
 
 export default Header;
-

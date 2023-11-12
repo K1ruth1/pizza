@@ -1,0 +1,227 @@
+/* @import url(https://fonts.googleapis.com/css?family=Roboto:300,400);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
+
+
+#couresl_top{
+    margin-top: -400px;
+    font-size: 2.5em;
+}
+#courasel_shop{
+    width: 130px;
+        font-weight: bold;
+        font-size: 1.5em;
+        color: white;
+        margin-bottom: 50px;
+        
+}
+#product{
+    border: none;
+}
+#product h5 {
+    margin-left: 120px;
+    margin-top: -55px;
+}
+#product p{
+    margin-left: 130px;
+
+}
+h5{
+    font-weight: bold;
+}
+/* about us */
+.about-us{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#shop-about{
+    width: 130px;
+    margin-left: 180px;
+        font-weight: bold;
+        font-size: 1.5em;
+        color: rgb(0, 0, 0);
+        
+}
+#side-logo{
+    width: 200px;
+    height: 80px;
+    margin-left: 250px;
+}
+/* Styles for the first container */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.container .text {
+    flex: 1;
+    padding: 20px;
+    text-align: left;
+}
+
+.container .image {
+    flex: 1;
+    text-align: right;
+    position: relative;
+    overflow: hidden;
+}
+
+.container .image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    /* Dark overlay color */
+    opacity: 0;
+    /* Initially hidden */
+    transition: opacity 0.3s;
+}
+
+.container .image:hover::before {
+    opacity: 0;
+    /* Clear the overlay on hover */
+}
+
+/* Styles for the second container */
+.container:nth-child(2) .text {
+    text-align: center;
+}
+
+.centered-text {
+    font-weight: bold;
+}
+
+/* Styles for the images */
+.container img {
+    width: 300px;
+    height: 380px;
+    border-radius: 12px;
+    transition: filter 0.3s;
+    /* Smooth transition for filter property */
+}
+
+.container .image:hover img {
+    filter: brightness(0.4);
+    /* Clear image on hover */
+}
+#action a{
+    width: 130px;
+    font-weight: bold;
+    font-size: 1.5em;
+    color: white;
+    margin-bottom: 50px;
+    margin-left: 600px;
+}
+#sub_heads{
+   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 2.2em;
+}
+#sub_headers{
+    color: yellow;
+    font-style: italic;
+}
+/* #courasel shop{
+    background-color: #f7d9b5;
+    padding-top: 100px;
+} */
+#blog_lower{
+    margin-left: 580px;
+}
+.grid-container {
+    margin-left: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* 3 columns in the grid, adjust as needed */
+    grid-gap: 20px;
+    /* Adjust the gap between elements as needed */
+}
+#blog-card{
+    width: 480px;
+    margin-left: 30px;
+    border: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+}
+
+#read-more{
+    color: white;
+    
+}
+
+figure.snip1390 {
+    font-family: 'Roboto', Arial, sans-serif;
+    position: relative;
+    overflow: hidden;
+    min-width: 230px;
+    max-width: 315px;
+    color: #000000;
+    text-align: center;
+    font-size: 16px;
+    background-color: #f5f5dc;
+    padding: 30px;
+    background-image: linear-gradient(-25deg, rgba(0, 0, 0, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    /* Adjust the margin between figures */
+}
+
+figure.snip1390 *:before,
+figure.snip1390 *:after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all 0.35s ease;
+    transition: all 0.35s ease;
+}
+
+figure.snip1390 figcaption {
+    width: 100%;
+}
+
+figure.snip1390 h2,
+figure.snip1390 h4,
+figure.snip1390 blockquote {
+    margin: 0;
+}
+
+figure.snip1390 h2 {
+    color: #ffffff;
+}
+
+figure.snip1390 h4 {
+    color: #a6a6a6;
+}
+
+figure.snip1390 blockquote {
+    font-size: 1em;
+    padding: 45px 20px 40px 50px;
+    background-color: #000000;
+    border-radius: 5px;
+    box-shadow: inset -1.4px -1.4px 2px rgba(0, 0, 0, 0.3);
+    text-align: left;
+    position: relative;
+}
+
+figure.snip1390 blockquote:before {
+    font-family: 'FontAwesome';
+    content: "\201C";
+    position: absolute;
+    font-size: 70px;
+    opacity: 0.25;
+    font-style: normal;
+    top: 0px;
+    left: 20px;
+}
+
+figure.snip1390 .profile {
+    width: 100px;
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.4);
+    border: solid 5px #A6A57A;
+}
