@@ -77,12 +77,19 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
             self.end_headers()
             
     def do_POST(self):        
-        if self.path == '/addPizza':
+        if self.path == '/add':
             pizza_types = create_pizza_types()
-            pizza_types = [
+            pizza_type_data = [
                 {"name": pizza[1], "description": pizza[2], "amount": pizza[3], "image_url": pizza[4]}
                 for pizza in pizza_types
             ]
+            self.send_response(200)
+            self.send_header('Content-type', 'application/json')
+            self.end_headers()
+            self.wfile.write(json.dumps(pizza_type_data).encode('utf-8'))
+        else:
+            self.send_response(404)
+            self.end_headers()
 
     def do_POST(self):
         content_length = int(self.headers['Content-Length'])

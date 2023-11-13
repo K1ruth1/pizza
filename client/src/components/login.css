@@ -8,7 +8,7 @@
 
 body {
     font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-    background: #828181;
+    background: #ffffff;
 }
 #login-signup{
     margin-top: 40px;
@@ -227,9 +227,11 @@ h2 {
 }
 
 #call_action{
-    color:#ffffff;
+    color:#000000;
     font-size: 15px;
     margin-left: 180px;
+    text-align: justify;
+
 }
 label {
     display: block;

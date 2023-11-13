@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import './adPizza.css';
 const BASE_URL ='http://localhost:80'
 
 
@@ -72,13 +73,12 @@ const AddPizzaForm = () => {
   
     const handleSubmit = async (event) => {
     //   event.preventDefault();
-        alert('Pizza added successfully!');
-        navigate('?displaypage');
+        
   
       const pizza_types = { name, amount, image_url, description };
   
       try {
-        const response = await fetch(`${BASE_URL}/addPizza`, {
+        const response = await fetch(`${BASE_URL}/add`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -89,7 +89,8 @@ const AddPizzaForm = () => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
-  
+        alert('Pizza added successfully!');
+        navigate('/displaypage');
         console.log('Pizza added:', pizza_types);
       } catch (error) {
         console.error('Error:', error);
@@ -97,7 +98,12 @@ const AddPizzaForm = () => {
     };
   
     return (
-      <form onSubmit={handleSubmit}>
+      <div>
+        <div class = 'topper' >ADD PIZZA</div>
+        <a href="/displaypage">
+              <button>Pizza List</button>
+            </a>
+      <form onSubmit={handleSubmit} id = 'addpizza'  >
         <label>
           Name:
           <input type="text" value={name} onChange={(e) => setName(e.target.value)} required />
@@ -116,6 +122,7 @@ const AddPizzaForm = () => {
         </label>
         <button type="submit">Add Pizza</button>
       </form>
+      </div>
     );
   };
   

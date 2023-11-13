@@ -41,11 +41,17 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './displayPage.css'
 import Header from './header';
+// import ReactDOM from 'react-dom/client';
+
 
 
 const DisplayCard = ({ }) => {
   const [productData, setProductData] = useState([ " " ]);
   const navigate = useNavigate();
+  // const container = document.getElementById('card-img-top');
+  // const root = ReactDOM.createRoot(container);
+  // root.render(<img/>)
+
 
   useEffect(() => {
     fetch('http://localhost:80/pizza-types')
@@ -66,7 +72,7 @@ const DisplayCard = ({ }) => {
         {productData.map((pizza_types) => (
           <div class="col">
             <div class="card">
-              <img src={pizza_types.image_url} className="card-img-top" alt="product image" />
+              <img src={[pizza_types.image_url]} className="card-img-top" alt="product image" />
               <div className="card-body">
                 <h5 className="card-title">{pizza_types.name}</h5>
                 <p className="card-text">{pizza_types.description}</p>

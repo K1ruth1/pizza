@@ -326,7 +326,7 @@ function LoginForm() {
               <h3>
                 {isSignUp
                   ? "Don't have an account? Dough not worry.Sign up!"
-                  : 'Already have an account?That grate just sign in.'}
+                  : 'Already have an account?That\s grate just sign in.'}
               </h3>
             </div>
             <div className="img__btn" onClick={handleToggleForm}>
@@ -336,7 +336,7 @@ function LoginForm() {
           </div>
           <div className="form sign-up">
             <h2>Create your Account</h2>
-            <h4 id="call_action">If you already have an account, just sign in.</h4>
+            <h4 id="call_action">Already have an account?That's grate just sign in..</h4>
             <label>
               <span> Restaurant Name</span>
               <input type="text" name="restaurantname" value={formData.restaurantname} onChange={handleChange} />

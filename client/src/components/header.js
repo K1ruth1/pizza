@@ -32,12 +32,12 @@ const Header = () => {
   return (
     <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
     <Container>
-      <Navbar.Brand href="/home">Pizzaverse</Navbar.Brand>
+      <Navbar.Brand href="/">Pizzaverse</Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="me-auto">
-          <Nav.Link href="/signIn">Login</Nav.Link>
-          <Nav.Link href="/signUp">Sign up</Nav.Link>
+          {/* <Nav.Link href="/">Login</Nav.Link>
+          <Nav.Link href="/">Sign up</Nav.Link> */}
           <NavDropdown title="Options" id="collapsible-nav-dropdown">
             <NavDropdown.Item href="/addpizza" >Add Pizza</NavDropdown.Item>
             {/* <NavDropdown.Item href="#action/3.2">
@@ -45,16 +45,16 @@ const Header = () => {
             </NavDropdown.Item>
             <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item> */}
             <NavDropdown.Divider />
-            <NavDropdown.Item href="/logOut">
+            <NavDropdown.Item href="/">
               Log out
             </NavDropdown.Item>
           </NavDropdown>
         </Nav>
-        <Nav>
+        {/* <Nav>
           <Nav.Link eventKey={2} href="#memes">
             Pizzaria
           </Nav.Link>
-        </Nav>
+        </Nav> */}
       </Navbar.Collapse>
     </Container>
   </Navbar>
